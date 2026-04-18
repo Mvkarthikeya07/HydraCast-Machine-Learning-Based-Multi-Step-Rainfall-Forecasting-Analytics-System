@@ -9,7 +9,7 @@
 
 <br/><br/>
 
-# 🌧️ HydraCast
+# 🌧️ HydraCast-Machine-Learning-Based-Multi-Step-Rainfall-Forecasting-Analytics-System
 
 **District-level rainfall forecasting. Lightweight ML. Live dashboard. No GPU.**
 
@@ -25,19 +25,19 @@ HydraCast takes historical rainfall CSVs, trains a Random Forest on sliding-wind
 
 **Hero dashboard — next-day prediction + 7-day cumulative stats**
 
-![Dashboard](ss1.png)
+<img width="1366" height="768" alt="Screenshot (47)" src="https://github.com/user-attachments/assets/740c5835-1f99-4b70-83fb-01a155396b1c" />
 
 **500+ Indian districts supported via a single dropdown**
 
-![District Selector](ss2.png)
+<img width="1366" height="768" alt="Screenshot (48)" src="https://github.com/user-attachments/assets/6c7ce29d-9991-4786-922c-32859355595c" />
 
 **Combined history + forecast chart with hover tooltips**
 
-![Chart and Forecast Cards](ss3.png)
+<img width="1366" height="768" alt="Screenshot (49)" src="https://github.com/user-attachments/assets/affaf86c-56e9-4447-972e-a56c77dd18b9" />
 
 **7-day easy-view table with rainfall level badges and proportional level bars**
 
-![Easy View Table](ss4.png)
+<img width="1366" height="768" alt="Screenshot (50)" src="https://github.com/user-attachments/assets/793e45cd-51df-4b85-9e2f-53c66ddc9fea" />
 
 ---
 
