@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rainfall Forecast Dashboard</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="app">
+
+  <!-- HEADER -->
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <span class="rain-icon">🌧</span>
+      <h1>Rainfall Forecast</h1>
+    </div>
+    <select id="district" onchange="loadData()">
+      {% for d in districts %}
+      <option value="{{ d }}">{{ d }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero-card">
+    <p class="hero-district" id="selectedDistrict">Loading...</p>
+    <div class="hero-value" id="prediction">-- mm</div>
+    <p class="hero-label">Next day rainfall prediction</p>
+  </div>
+
+  <!-- METRIC CARDS -->
+  <div class="metrics-row">
+    <div class="metric-card">
+      <div class="metric-label">7-day total</div>
+      <div class="metric-value" id="cardTotal">--</div>
+      <div class="metric-sub">Cumulative forecast</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Peak amount</div>
+      <div class="metric-value" id="cardPeak">--</div>
+      <div class="metric-sub">Highest single day</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Peak day</div>
+      <div class="metric-value" id="cardPeakDay">--</div>
+      <div class="metric-sub">When to expect most</div>
+    </div>
+  </div>
+
+  <!-- CHART -->
+  <div class="glass-card">
+    <div class="card-header">
+      <h3>Rainfall history + forecast</h3>
+      <div class="legend">
+        <span class="leg-item"><span class="leg-box" style="background:#4facfe;"></span>Past rainfall</span>
+        <span class="leg-item"><span class="leg-box" style="background:#ff6b6b;opacity:0.8;"></span>Forecast</span>
+      </div>
+    </div>
+    <div class="chart-wrap">
+      <canvas id="chart"></canvas>
+    </div>
+  </div>
+
+  <!-- DAY CARDS STRIP -->
+  <div class="glass-card">
+    <div class="card-header">
+      <h3>Day-by-day forecast</h3>
+    </div>
+    <div class="forecast-strip" id="forecastStrip"></div>
+  </div>
+
+  <!-- RESULTS TABLE -->
+  <div class="glass-card">
+    <div class="card-header">
+      <h3>7-day forecast — easy view</h3>
+      <span class="card-hint">Simple view for everyone</span>
+    </div>
+    <table class="fc-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Expected rain</th>
+          <th>What to expect</th>
+          <th>Level</th>
+        </tr>
+      </thead>
+      <tbody id="fcTableBody"></tbody>
+    </table>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span class="live-dot"></span>
+    Live updates every 10 seconds
+  </div>
+
+</div>
+
+<script src="/static/js/script.js"></script>
+</body>
+</html>
