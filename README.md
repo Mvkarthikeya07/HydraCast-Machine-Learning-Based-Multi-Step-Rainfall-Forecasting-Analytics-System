@@ -122,7 +122,7 @@ HydraCast/
 **Requirements:** Python 3.9+
 
 ```bash
-git clone https://github.com/yourusername/HydraCast.git
+git clone https://github.com/Mvkarthikeya07/HydraCast-Machine-Learning-Based-Multi-Step-Rainfall-Forecasting-Analytics-System.git
 cd HydraCast
 
 python -m venv venv
